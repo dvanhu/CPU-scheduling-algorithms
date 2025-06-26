@@ -1,23 +1,21 @@
 # CPU-Scheduling-Algorithms
-
-An implementation of various CPU scheduling algorithms in C++.  
-Includes:  
-- First Come First Serve (FCFS)  
-- Round Robin (RR) with varying time quantum  
-- Shortest Process Next (SPN)  
-- Shortest Remaining Time (SRT)  
-- Highest Response Ratio Next (HRRN)  
-- Feedback (FB)  
-- Feedback with varying time quantum (FBV)  
-- Aging Scheduler  
+A C++ implementation of multiple CPU scheduling algorithms, including First Come First Serve (FCFS), Round Robin (RR), Shortest Process Next (SPN), Shortest Remaining Time (SRT), Highest Response Ratio Next (HRRN), Feedback (FB), and Aging.  
 
 ---
 
 ## 📚 Table of Contents
-
-- [Algorithms](#algorithms)
-- [Installation](#installation)
-- [Input Format](#input-format)
+- CPU-Scheduling-Algorithms
+   - [Algorithms](#algorithms)
+        - First Come First Serve (FCFS)  
+        - Round Robin (RR)  
+        - Shortest Process Next (SPN)  
+        - Shortest Remaining Time (SRT)  
+        - Highest Response Ratio Next (HRRN)  
+        - Feedback (FB)  
+        - Feedback with varying time quantum (FBV)  
+        - Aging 
+   - [Installation](#installation)
+   - [Input Format](#input-format)
 
 ---
 

@@ -1,4 +1,4 @@
-trace
+stats
 1
 20
 5

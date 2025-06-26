@@ -1,21 +1,23 @@
 # CPU-Scheduling-Algorithms
-A C++ implementation of multiple CPU scheduling algorithms, including First Come First Serve (FCFS), Round Robin (RR), Shortest Process Next (SPN), Shortest Remaining Time (SRT), Highest Response Ratio Next (HRRN), Feedback (FB), and Aging.  
+
+A C++ implementation of multiple CPU scheduling algorithms, including First Come First Serve (FCFS), Round Robin (RR), Shortest Process Next (SPN), Shortest Remaining Time (SRT), Highest Response Ratio Next (HRRN), Feedback (FB), Feedback with varying time quantum (FBV), and Aging.
 
 ---
 
 ## 📚 Table of Contents
-- CPU-Scheduling-Algorithms
-   - [Algorithms](#algorithms)
-        - First Come First Serve (FCFS)  
-        - Round Robin (RR)  
-        - Shortest Process Next (SPN)  
-        - Shortest Remaining Time (SRT)  
-        - Highest Response Ratio Next (HRRN)  
-        - Feedback (FB)  
-        - Feedback with varying time quantum (FBV)  
-        - Aging 
-   - [Installation](#installation)
-   - [Input Format](#input-format)
+
+- [CPU-Scheduling-Algorithms](#cpu-scheduling-algorithms)
+  - [Algorithms](#algorithms)
+   - [First Come First Serve (FCFS)](#1-first-come-first-serve-fcfs)
+   - [Round Robin (RR)](#2-round-robin-rr)
+   - [Shortest Process Next (SPN)](#3-shortest-process-next-spn)
+   - [Shortest Remaining Time (SRT)](#4-shortest-remaining-time-srt)
+   - [Highest Response Ratio Next (HRRN)](#5-highest-response-ratio-next-hrrn)
+   - [Feedback (FB)](#6-feedback-fb)
+   - [Feedback with Varying Time Quantum (FBV)](#7-feedback-with-varying-time-quantum-fbv)
+   - [Aging](#8-aging)
+- [Installation](#installation)
+- [Input Format](#input-format)
 
 ---
 
@@ -28,38 +30,42 @@ A C++ implementation of multiple CPU scheduling algorithms, including First Come
 
 ### 2. Round Robin (RR)
 - **Type:** Preemptive  
-- **Description:** Time-sliced scheduling with adjustable quantum (`q`). Shorter processes can get smaller quanta. Prevents starvation and improves fairness.
-- **Use Case:** Time-sharing systems with better flexibility.
+- **Description:** Time-sliced scheduling with adjustable quantum (`q`). Shorter processes can be handled more responsively. Prevents starvation and improves fairness.  
+- **Use Case:** Time-sharing systems.
 
 ### 3. Shortest Process Next (SPN)
 - **Type:** Non-preemptive  
-- **Description:** Executes the process with the shortest burst time next. Good for minimizing average waiting time.
-- **Use Case:** Systems optimizing for average waiting time.
+- **Description:** Executes the process with the shortest burst time next. Optimized for lower average waiting time.  
+- **Use Case:** Systems aiming to minimize wait time.
 
 ### 4. Shortest Remaining Time (SRT)
 - **Type:** Preemptive  
-- **Description:** Chooses the process with the shortest remaining time. Can preempt a currently running process.
-- **Use Case:** Interactive systems with variable process times.
+- **Description:** Selects the process with the shortest remaining execution time. Can preempt a currently running process.  
+- **Use Case:** Interactive systems with dynamic processes.
 
 ### 5. Highest Response Ratio Next (HRRN)
 - **Type:** Non-preemptive  
-- **Description:** Chooses the process with the highest response ratio: = Waiting Time + Service Time / Service Time
-- **Use Case:** Fair scheduling without starvation.
+- **Description:** Chooses the process with the highest response ratio:  
+  \[
+  \text{Response Ratio} = \frac{\text{Waiting Time} + \text{Service Time}}{\text{Service Time}}
+  \]  
+- **Use Case:** Ensures fairness while avoiding starvation.
 
 ### 6. Feedback (FB)
 - **Type:** Preemptive  
-- **Description:** Uses multiple queues and promotes/demotes processes based on behavior. Higher priority queues are served first.
-- **Use Case:** Mixed process types with aging and fairness.
+- **Description:** Multi-level queue-based scheduler. Processes are demoted to lower priority queues if they use too much CPU time.  
+- **Use Case:** Fair scheduling for both short and long tasks.
 
 ### 7. Feedback with Varying Time Quantum (FBV)
 - **Type:** Preemptive  
-- **Description:** Similar to FB, but with increasing time quantums for lower queues. Helps balance responsiveness and fairness.
-- **Use Case:** Increased control over scheduling fairness and efficiency.
+- **Description:** Same as FB but with increasing time quantums for lower priority queues (`q = 2^i`).  
+- **Use Case:** Fine-tuned control over responsiveness and efficiency.
 
 ### 8. Aging
 - **Type:** Preemptive  
-- **Description:** Prevents starvation by increasing the priority of waiting processes over time. Inspired by Xinu OS.
-- **Use Case:** Real-time systems needing fairness.
+- **Description:** Prevents starvation by gradually increasing the priority of waiting processes over time. Inspired by Xinu OS.  
+- **Use Case:** Real-time systems that require fairness.
+
 ---
 
 ## ⚙️ Installation

@@ -18,7 +18,6 @@ Includes:
 - [Algorithms](#algorithms)
 - [Installation](#installation)
 - [Input Format](#input-format)
-- [Contributors](#contributors)
 
 ---
 
@@ -80,3 +79,36 @@ make
 
 # 4. Run the program
 ./scheduler
+```
+
+## 📝 Input Format
+Line 1: "trace" or "stats" – Mode of execution.
+
+Line 2: Comma-separated list of scheduling policies and their parameters.
+
+Example: 1,2-4,8-1
+
+1 → FCFS
+
+2-4 → RR with quantum = 4
+
+8-1 → Aging with quantum = 1
+
+Line 3: Simulation time (last time instant on timeline).
+
+Line 4: Number of processes.
+
+Line 5 onwards: Process description (one per line).
+
+For Algorithms 1-7 (FCFS to FBV):
+Each process line:
+
+``` <ProcessName>,<ArrivalTime>,<ServiceTime> ```
+
+For Algorithm 8 (Aging):
+Each process line:
+
+``` <ProcessName>,<ArrivalTime>,<Priority> ```
+
+Processes are sorted by arrival time.
+If arrival time matches, the lower-priority process is considered first.
